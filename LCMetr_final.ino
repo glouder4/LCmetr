@@ -45,6 +45,7 @@ void setup() {
       if(count ==0){resetFunc();}
     }
     else{
+      lcd.clear();
     do{
       lcd.setCursor(0,0);
       lcd.print("Please,select");
@@ -102,21 +103,21 @@ void loop() {
       if(C > 1000){
         C = C/ 1000;
         dtostrf(C,1, 2, Coutstr);
-        lcd.clear(); 
+        lcd.clear();
         lcd.setCursor(0,1);
         lcd.print("C: ");
         lcd.print(Coutstr);
         lcd.print(" nF");
       }
       else if(C == 0){ 
-        lcd.clear(); 
+        lcd.clear();
         lcd.setCursor(0,1);
         lcd.print("C: ");
         lcd.print("not included");
       }
       else{
         dtostrf(C,1, 2, Coutstr);
-        lcd.clear(); 
+        lcd.clear();
         lcd.setCursor(0,1);
         lcd.print("C: ");
         lcd.print(Coutstr);
@@ -127,7 +128,7 @@ void loop() {
     if (digitalRead(DEBUG) == LOW){
         if(count == 0){
           dtostrf(L,1, 3, Loutstr);
-          lcd.clear(); 
+          lcd.clear();
           lcd.setCursor(0,1);
           lcd.print("L: ");
           lcd.print("not included");
@@ -138,7 +139,7 @@ void loop() {
         if(L < 0){
           L = L*1000;
           dtostrf(L,1, 3, Loutstr);
-          lcd.clear(); 
+          lcd.clear();
           lcd.setCursor(0,1);
           lcd.print("L: ");
           lcd.print(Loutstr); 
@@ -148,7 +149,7 @@ void loop() {
           if(L > 1000){
             L = L/1000;
             dtostrf(L,1, 3, Loutstr);
-            lcd.clear(); 
+            lcd.clear();
             lcd.setCursor(0,1);
             lcd.print("L: ");
             lcd.print(Loutstr);
@@ -156,7 +157,7 @@ void loop() {
           }
           else{
             dtostrf(L,1, 3, Loutstr);
-            lcd.clear(); 
+            lcd.clear();
             lcd.setCursor(0,1);
             lcd.print("L: ");
             lcd.print(Loutstr);
